@@ -1,0 +1,13 @@
+parameters:
+  containers: {}
+
+jobs:
+- ${{ each container in parameters.containers }}:
+  - template: /resources/pipelines/docker_build_detail.yml
+    parameters:
+      name: ${{ container.name }}
+      subscriptionEndpoint: ${{ container.subscriptionEndpoint }}
+      buildContext: ${{ container.buildContext }}
+      containerRegistry: ${{ container.containerRegistry }}
+      dockerfile: ${{ container.dockerfile }}
+      buildargs: ${{ container.buildArgs }}

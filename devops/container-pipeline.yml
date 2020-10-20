@@ -1,0 +1,18 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - 'resources/docker/myrover/*'
+    exclude:
+      - 'resources/docker/myrover/README.md'
+
+jobs:
+  - template: /resources/pipelines/docker_build_detail.yml
+    parameters:
+      name: myrover
+      subscriptionEndpoint: 'test-Prod'
+      containerRegistry: test.azurecr.io
+      dockerfile: 'resources/docker/myrover/docker-compose.yml'
