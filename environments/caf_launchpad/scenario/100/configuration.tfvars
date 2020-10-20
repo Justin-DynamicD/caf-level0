@@ -6,11 +6,13 @@ landingzone = {
 
 
 # Default region. When not set to a resource it will use that value
-default_region = "region1"
+#default_region = "westus2"
+prefix         = "lvl0"
+
 
 regions = {
-  region1 = "southeastasia"
-  region2 = "eastasia"
+  region1 = "westus2"
+  region2 = "eastus"
 }
 
 launchpad_key_names = {
